@@ -1,5 +1,6 @@
-import { carName } from "./model.js";
+import { gameInformationStore } from "./model.js";
 import { raceTimeTemplate } from "./view/raceTimeTemplate.js";
+import { raceTimeEventListener } from "./init.js";
 
 const carNameInput = document.querySelector("#carNameInput");
 const userInputComponent = document.querySelector("#user-input-component");
@@ -18,11 +19,24 @@ export const handleCarNameInput = (event) => {
       return;
     }
   }
-  carName.name = carNameInputValue;
+  gameInformationStore.carName = carNameInputValue;
   carNameInput.disabled = true;
   carNameInputButton.disabled = true;
 
   const newSection = document.createElement("section");
   newSection.innerHTML = raceTimeTemplate;
   userInputComponent.appendChild(newSection);
+
+  raceTimeEventListener();
+};
+
+export const handleRaceTimeInput = (event) => {
+  event.preventDefault();
+  const raceTimeInput = document.querySelector("#raceTimeInput");
+  const raceTimeSubmitButton = document.querySelector("#raceTimeSubmitButton");
+
+  gameInformationStore.raceTime = Number(raceTimeInput.value);
+
+  raceTimeInput.disabled = true;
+  raceTimeSubmitButton.disabled = true;
 };
