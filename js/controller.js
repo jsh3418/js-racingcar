@@ -1,5 +1,6 @@
 import { gameInformationStore } from "./model.js";
 import { raceTimeTemplate } from "./view/raceTimeTemplate.js";
+import { gameProcesstemplate } from "./view/gameProcessTemplate.js";
 import { raceTimeEventListener } from "./init.js";
 
 const carNameInput = document.querySelector("#carNameInput");
@@ -8,10 +9,12 @@ const carNameInputButton = document.querySelector("#carNameInputSubmitButton");
 
 export const handleCarNameInput = (event) => {
   event.preventDefault();
+
   let carNameInputValue = carNameInput.value.split(",");
   carNameInputValue = carNameInputValue.map((item) => {
     return item.trim();
   });
+
   for (let item of carNameInputValue) {
     if (item.length > 5) {
       alert("5자 이하의 자동차 이름을 입력해주세요.");
@@ -19,6 +22,7 @@ export const handleCarNameInput = (event) => {
       return;
     }
   }
+
   gameInformationStore.carName = carNameInputValue;
   carNameInput.disabled = true;
   carNameInputButton.disabled = true;
@@ -39,4 +43,15 @@ export const handleRaceTimeInput = (event) => {
 
   raceTimeInput.disabled = true;
   raceTimeSubmitButton.disabled = true;
+
+  carNameRender();
+};
+
+const carNameRender = () => {
+  const divApp = document.querySelector("#app");
+
+  const newDiv = document.createElement("div");
+
+  newDiv.innerHTML = gameProcesstemplate(gameInformationStore.carName);
+  divApp.appendChild(newDiv);
 };
