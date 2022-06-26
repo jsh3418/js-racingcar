@@ -1,4 +1,5 @@
-import { handleCarNameInput, handleRaceTimeInput } from "./controller.js";
+import { handleCarNameInput } from "./controller/handleCarNameInput.js";
+import { handleRaceTimeInput } from "./controller/handleRaceTimeInput.js";
 
 const carNameInput = document.querySelector("#carNameInput");
 const carNameInputButton = document.querySelector("#carNameInputSubmitButton");
