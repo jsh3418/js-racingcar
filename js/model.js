@@ -1,4 +1,4 @@
 export const gameInformationStore = {
-  carName: [],
+  car: [],
   raceTime: null,
 };

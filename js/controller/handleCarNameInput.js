@@ -11,10 +11,9 @@ export const handleCarNameInput = (event) => {
     "#carNameInputSubmitButton"
   );
 
-  let carNameInputValue = carNameInput.value.split(",");
-  carNameInputValue = carNameInputValue.map((item) => {
-    return item.trim();
-  });
+  const carNameInputValue = carNameInput.value
+    .split(",")
+    .map((value) => value.trim());
 
   for (let item of carNameInputValue) {
     if (item.length > 5) {
@@ -24,7 +23,11 @@ export const handleCarNameInput = (event) => {
     }
   }
 
-  gameInformationStore.carName = carNameInputValue;
+  carNameInputValue.forEach((item) => {
+    const template = { name: item, point: 0 };
+    gameInformationStore.car.push(template);
+  });
+
   carNameInput.disabled = true;
   carNameInputButton.disabled = true;
 
