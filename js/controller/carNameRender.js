@@ -6,6 +6,6 @@ export const carNameRender = () => {
 
   const newDiv = document.createElement("div");
 
-  newDiv.innerHTML = gameProcesstemplate(gameInformationStore.carName);
+  newDiv.innerHTML = gameProcesstemplate(gameInformationStore.car);
   divApp.appendChild(newDiv);
 };
