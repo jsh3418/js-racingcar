@@ -10,6 +10,7 @@ export const randomGoStop = () => {
     if (randomInteger >= 4) {
       const cars = document.querySelectorAll(".car-player");
       cars[i].insertAdjacentHTML("afterend", forwardIconTemplate);
+      gameInformationStore.car[i].point++;
     }
   }
 };
