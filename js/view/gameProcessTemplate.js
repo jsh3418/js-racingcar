@@ -19,7 +19,7 @@ export const gameProcesstemplate = (car) => {
 
 export const forwardIconTemplate = `<div class="forward-icon mt-2">⬇️️</div>`;
 
-export const spinnerIconTemplate = `<div class="d-flex justify-center mt-3">
+export const spinnerIconTemplate = `<div id="spinnerIcon" class="d-flex justify-center mt-3">
   <div class="relative spinner-container">
     <span class="material spinner"></span>
   </div>
