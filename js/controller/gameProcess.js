@@ -27,4 +27,9 @@ export const deleteSpinnerIcon = () => {
   for (let element of spinners) {
     element.remove();
   }
+  setTimeout(winnerMessage, 2000);
+};
+
+const winnerMessage = () => {
+  alert("🎇🎇🎇🎇축하합니다!🎇🎇🎇🎇");
 };

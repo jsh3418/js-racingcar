@@ -1,6 +1,6 @@
 import { gameInformationStore } from "../model.js";
 import { carNameRender } from "./carNameRender.js";
-
+import { renderWinner } from "./renderWinner.js";
 import {
   randomGoStop,
   paintSpinnerIcon,
@@ -26,6 +26,7 @@ export const handleRaceTimeInput = (event) => {
     if (gameInformationStore.raceTime === 0) {
       clearInterval(raceInterval);
       deleteSpinnerIcon();
+      renderWinner();
     }
   }, 2000);
 };
