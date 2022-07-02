@@ -1,6 +1,6 @@
 import { savePlayers } from "../model.js";
 import { raceTimeTemplate } from "../view/raceTimeTemplate.js";
-import { raceTimeEventListener } from "../init.js";
+import { raceTimeEventListener } from "../eventListener/raceTimeEventListener.js";
 
 export const handleCarNameInput = (event) => {
   event.preventDefault();
