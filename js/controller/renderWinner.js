@@ -2,6 +2,13 @@ import { store } from "../model.js";
 import { winnerTemplate } from "../view/winnerTemplate.js";
 
 export const renderWinner = () => {
+  const divApp = document.querySelector("#app");
+  const div = document.createElement("div");
+  div.innerHTML = winnerTemplate(pickWinner());
+  divApp.appendChild(div);
+};
+
+const pickWinner = () => {
   let winner;
   let temp = 0;
   for (let i in store.players) {
@@ -12,9 +19,5 @@ export const renderWinner = () => {
       winner += `, ${store.players[i].name}`;
     }
   }
-
-  const divApp = document.querySelector("#app");
-  const div = document.createElement("div");
-  div.innerHTML = winnerTemplate(winner);
-  divApp.appendChild(div);
+  return winner;
 };
