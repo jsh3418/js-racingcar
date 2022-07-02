@@ -1,4 +1,4 @@
-import { gameInformationStore } from "../model.js";
+import { store } from "../model.js";
 import { gameProcesstemplate } from "../view/gameProcessTemplate.js";
 
 export const carNameRender = () => {
@@ -6,6 +6,6 @@ export const carNameRender = () => {
 
   const newDiv = document.createElement("div");
 
-  newDiv.innerHTML = gameProcesstemplate(gameInformationStore.car);
+  newDiv.innerHTML = gameProcesstemplate(store.players);
   divApp.appendChild(newDiv);
 };

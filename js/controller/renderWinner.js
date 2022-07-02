@@ -1,15 +1,15 @@
-import { gameInformationStore } from "../model.js";
+import { store } from "../model.js";
 import { winnerTemplate } from "../view/winnerTemplate.js";
 
 export const renderWinner = () => {
   let winner;
   let temp = 0;
-  for (let i in gameInformationStore.car) {
-    if (temp < gameInformationStore.car[i].point) {
-      winner = gameInformationStore.car[i].name;
-      temp = gameInformationStore.car[i].point;
-    } else if (temp === gameInformationStore.car[i].point) {
-      winner += `, ${gameInformationStore.car[i].name}`;
+  for (let i in store.players) {
+    if (temp < store.players[i].point) {
+      winner = store.players[i].name;
+      temp = store.players[i].point;
+    } else if (temp === store.players[i].point) {
+      winner += `, ${store.players[i].name}`;
     }
   }
 

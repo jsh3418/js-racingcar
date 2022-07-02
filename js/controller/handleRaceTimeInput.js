@@ -1,4 +1,4 @@
-import { gameInformationStore } from "../model.js";
+import { store } from "../model.js";
 import { carNameRender } from "./carNameRender.js";
 import { renderWinner } from "./renderWinner.js";
 import {
@@ -12,7 +12,7 @@ export const handleRaceTimeInput = (event) => {
   const raceTimeInput = document.querySelector("#raceTimeInput");
   const raceTimeSubmitButton = document.querySelector("#raceTimeSubmitButton");
 
-  gameInformationStore.raceTime = Number(raceTimeInput.value);
+  store.raceTime = Number(raceTimeInput.value);
 
   raceTimeInput.disabled = true;
   raceTimeSubmitButton.disabled = true;
@@ -22,8 +22,8 @@ export const handleRaceTimeInput = (event) => {
 
   const raceInterval = setInterval(() => {
     randomGoStop();
-    gameInformationStore.raceTime--;
-    if (gameInformationStore.raceTime === 0) {
+    store.raceTime--;
+    if (store.raceTime === 0) {
       clearInterval(raceInterval);
       deleteSpinnerIcon();
       renderWinner();

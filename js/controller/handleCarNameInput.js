@@ -1,4 +1,4 @@
-import { gameInformationStore } from "../model.js";
+import { store } from "../model.js";
 import { raceTimeTemplate } from "../view/raceTimeTemplate.js";
 import { raceTimeEventListener } from "../init.js";
 
@@ -25,7 +25,7 @@ export const handleCarNameInput = (event) => {
 
   carNameInputValue.forEach((item) => {
     const template = { name: item, point: 0 };
-    gameInformationStore.car.push(template);
+    store.players.push(template);
   });
 
   carNameInput.disabled = true;

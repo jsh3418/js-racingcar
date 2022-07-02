@@ -1,16 +1,16 @@
-import { gameInformationStore } from "../model.js";
+import { store } from "../model.js";
 import {
   forwardIconTemplate,
   spinnerIconTemplate,
 } from "../view/gameProcessTemplate.js";
 
 export const randomGoStop = () => {
-  for (let i in gameInformationStore.car) {
+  for (let i in store.players) {
     const randomInteger = Math.floor(Math.random() * 10);
     if (randomInteger >= 4) {
       const cars = document.querySelectorAll(".car-player");
       cars[i].insertAdjacentHTML("afterend", forwardIconTemplate);
-      gameInformationStore.car[i].point++;
+      store.players[i].point++;
     }
   }
 };
