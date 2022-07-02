@@ -3,7 +3,6 @@ import {
   forwardIconTemplate,
   spinnerIconTemplate,
 } from "../view/gameProcessTemplate.js";
-import { winnerMessage } from "../view/winnerTemplate.js";
 
 export const randomGoStop = () => {
   for (let i in store.players) {

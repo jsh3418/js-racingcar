@@ -7,6 +7,11 @@ export const handleRaceTimeInput = (event) => {
   const raceTimeSubmitButton = document.querySelector("#raceTimeSubmitButton");
 
   store.raceTime = parseInt(raceTimeInput.value, 10);
+  if (store.raceTime <= 0) {
+    alert("시도 횟수는 1이상 입력해야 합니다.");
+    document.querySelector("#raceTimeInput").value = "";
+    return;
+  }
 
   raceTimeInput.disabled = true;
   raceTimeSubmitButton.disabled = true;
