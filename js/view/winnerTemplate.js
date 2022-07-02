@@ -8,3 +8,7 @@ export const winnerTemplate = (winner) => {
   </div>
 </section>`;
 };
+
+export const winnerMessage = () => {
+  alert("🎇🎇🎇🎇축하합니다!🎇🎇🎇🎇");
+};
