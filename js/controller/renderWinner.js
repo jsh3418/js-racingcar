@@ -7,6 +7,7 @@ export const renderWinner = () => {
   for (let i in gameInformationStore.car) {
     if (temp < gameInformationStore.car[i].point) {
       winner = gameInformationStore.car[i].name;
+      temp = gameInformationStore.car[i].point;
     } else if (temp === gameInformationStore.car[i].point) {
       winner += `, ${gameInformationStore.car[i].name}`;
     }
