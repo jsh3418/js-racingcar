@@ -8,7 +8,7 @@ const carPlayerTemplate = (car) => {
     .join("");
 };
 
-export const gameProcesstemplate = (car) => {
+export const gameProcessTemplate = (car) => {
   return `
   <section class="d-flex justify-center mt-5">
     <div class="mt-4 d-flex">
