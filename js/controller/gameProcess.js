@@ -28,5 +28,4 @@ export const deleteSpinnerIcon = () => {
   for (let element of spinners) {
     element.remove();
   }
-  setTimeout(winnerMessage, 2000);
 };
