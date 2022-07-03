@@ -1,11 +1,14 @@
 import { store } from "../model.js";
 import { winnerTemplate } from "../view/winnerTemplate.js";
+import { resetButtonEventListener } from "../eventListener/resetButtonEventListener.js";
 
 export const renderWinner = () => {
   const divApp = document.querySelector("#app");
   const div = document.createElement("div");
   div.innerHTML = winnerTemplate(pickWinner());
   divApp.appendChild(div);
+
+  resetButtonEventListener();
 };
 
 const pickWinner = () => {
