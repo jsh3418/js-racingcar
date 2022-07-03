@@ -6,7 +6,6 @@ export const handleCarNameInput = (event) => {
   event.preventDefault();
 
   const carNameInput = document.querySelector("#carNameInput");
-  const userInputComponent = document.querySelector("#user-input-component");
   const carNameInputButton = document.querySelector(
     "#carNameInputSubmitButton"
   );
@@ -30,9 +29,15 @@ export const handleCarNameInput = (event) => {
   carNameInput.disabled = true;
   carNameInputButton.disabled = true;
 
-  const newSection = document.createElement("section");
-  newSection.innerHTML = raceTimeTemplate;
-  userInputComponent.appendChild(newSection);
+  createRaceTimeInput();
+};
+
+const createRaceTimeInput = () => {
+  const userInputComponent = document.querySelector("#user-input-component");
+
+  const section = document.createElement("section");
+  section.innerHTML = raceTimeTemplate;
+  userInputComponent.appendChild(section);
 
   raceTimeEventListener();
 };
