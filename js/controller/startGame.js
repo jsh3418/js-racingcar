@@ -21,5 +21,5 @@ export const startGame = () => {
       renderWinner();
       setTimeout(winnerMessage, 2000);
     }
-  }, 2000);
+  }, 1000);
 };
