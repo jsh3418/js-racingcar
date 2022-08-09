@@ -3,7 +3,7 @@ import { raceTimeTemplate } from "../view/raceTimeTemplate.js";
 import { raceTimeEventListener } from "../eventListener/raceTimeEventListener.js";
 import { $ } from "../DOM.js";
 
-export const handleCarNameInput = (event) => {
+export const handleCarNameSubmit = (event) => {
   event.preventDefault();
 
   const carNameInput = $("#car-name-input");

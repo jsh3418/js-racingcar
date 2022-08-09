@@ -1,11 +1,11 @@
-import { handleCarNameInput } from "./controller/handleCarNameInput.js";
+import { handleCarNameSubmit } from "./controller/handleCarNameInput.js";
 import { $ } from "./DOM.js";
 
 const initEventListener = () => {
   const carNameInput = $("#car-name-input");
   const carNameInputButton = $("#car-name-submit-button");
-  carNameInput.addEventListener("submit", handleCarNameInput);
-  carNameInputButton.addEventListener("click", handleCarNameInput);
+  carNameInput.addEventListener("submit", handleCarNameSubmit);
+  carNameInputButton.addEventListener("click", handleCarNameSubmit);
 };
 
 export const initApp = () => {
