@@ -7,13 +7,11 @@ export const handleCarNameInput = (event) => {
   event.preventDefault();
 
   const carNameInput = $("#car-name-input");
-  const carNameInputButton = $("#car-name-input-submit-button");
+  const carNameSubmitButton = $("#car-name-submit-button");
 
-  const carNameInputValue = carNameInput.value
-    .split(",")
-    .map((value) => value.trim());
+  const carNames = carNameInput.value.split(",").map((value) => value.trim());
 
-  for (let item of carNameInputValue) {
+  for (let item of carNames) {
     if (item.length > 5) {
       alert("5자 이하의 자동차 이름을 입력해주세요.");
       $("#car-name-input").value = "";
@@ -21,12 +19,12 @@ export const handleCarNameInput = (event) => {
     }
   }
 
-  carNameInputValue.forEach((item) => {
+  carNames.forEach((item) => {
     savePlayers(item);
   });
 
   carNameInput.disabled = true;
-  carNameInputButton.disabled = true;
+  carNameSubmitButton.disabled = true;
 
   createRaceTimeInput();
 };

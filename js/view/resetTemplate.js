@@ -18,7 +18,7 @@ export const resetTemplate = `
                   />
                   <button
                     type="submit"
-                    id="car-name-input-submit-button"
+                    id="car-name-submit-button"
                     class="btn btn-cyan"
                   >
                     확인
