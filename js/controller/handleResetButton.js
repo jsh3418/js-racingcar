@@ -1,5 +1,5 @@
 import { resetTemplate } from "../view/resetTemplate.js";
-import { init } from "../eventListener/init.js";
+import { initApp } from "../index.js";
 import { resetStore } from "../model.js";
 
 export const handleResetButton = () => {
@@ -13,5 +13,5 @@ export const handleResetButton = () => {
   body.prepend(template);
 
   resetStore();
-  init();
+  initApp();
 };
