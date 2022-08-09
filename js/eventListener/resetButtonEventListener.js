@@ -1,6 +1,7 @@
 import { handleResetButton } from "../controller/handleResetButton.js";
+import { $ } from "../DOM.js";
 
 export const resetButtonEventListener = () => {
-  const resetButton = document.querySelector("#reset-button");
+  const resetButton = $("#reset-button");
   resetButton.addEventListener("click", handleResetButton);
 };

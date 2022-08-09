@@ -1,3 +1,4 @@
+import { $$ } from "../DOM.js";
 import { store } from "../model.js";
 import {
   forwardIconTemplate,
@@ -8,7 +9,7 @@ export const randomGoStop = () => {
   for (let i in store.players) {
     const randomInteger = Math.floor(Math.random() * 10);
     if (randomInteger >= 4) {
-      const cars = document.querySelectorAll(".car-player");
+      const cars = $$(".car-player");
       cars[i].insertAdjacentHTML("afterend", forwardIconTemplate);
       store.players[i].point++;
     }
@@ -16,14 +17,14 @@ export const randomGoStop = () => {
 };
 
 export const paintSpinnerIcon = () => {
-  const cars = document.querySelectorAll(".car-player");
+  const cars = $$(".car-player");
   for (let element of cars) {
     element.insertAdjacentHTML("afterend", spinnerIconTemplate);
   }
 };
 
 export const deleteSpinnerIcon = () => {
-  const spinners = document.querySelectorAll("#spinnerIcon");
+  const spinners = $$("#spinnerIcon");
   for (let element of spinners) {
     element.remove();
   }

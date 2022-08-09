@@ -1,8 +1,9 @@
+import { $ } from "../DOM.js";
 import { store } from "../model.js";
 import { gameProcessTemplate } from "../view/gameProcessTemplate.js";
 
 export const carNameRender = () => {
-  const divApp = document.querySelector("#app");
+  const divApp = $("#app");
 
   const newDiv = document.createElement("div");
 
