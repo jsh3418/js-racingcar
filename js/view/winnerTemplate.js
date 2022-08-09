@@ -3,7 +3,7 @@ export const winnerTemplate = (winner) => {
   <div>
     <h2>🏆 최종 우승자: ${winner} 🏆</h2>
     <div class="d-flex justify-center">
-      <button id="resetButton" type="button" class="btn btn-cyan">다시 시작하기</button>
+      <button id="reset-button" type="button" class="btn btn-cyan">다시 시작하기</button>
     </div>
   </div>
 </section>`;

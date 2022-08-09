@@ -5,9 +5,9 @@ import { raceTimeEventListener } from "../eventListener/raceTimeEventListener.js
 export const handleCarNameInput = (event) => {
   event.preventDefault();
 
-  const carNameInput = document.querySelector("#carNameInput");
+  const carNameInput = document.querySelector("#car-name-input");
   const carNameInputButton = document.querySelector(
-    "#carNameInputSubmitButton"
+    "#car-name-input-submit-button"
   );
 
   const carNameInputValue = carNameInput.value
@@ -17,7 +17,7 @@ export const handleCarNameInput = (event) => {
   for (let item of carNameInputValue) {
     if (item.length > 5) {
       alert("5자 이하의 자동차 이름을 입력해주세요.");
-      document.querySelector("#carNameInput").value = "";
+      document.querySelector("#car-name-input").value = "";
       return;
     }
   }
