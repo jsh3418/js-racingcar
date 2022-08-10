@@ -2,7 +2,7 @@ import { $ } from "../constants/DOM.js";
 import { store } from "../model.js";
 import { startGame } from "./startGame.js";
 
-export const handleRaceTimeInput = (event) => {
+export const handleRaceTimeSubmit = (event) => {
   event.preventDefault();
   const raceTimeInput = $("#race-time-input");
   const raceTimeSubmitButton = $("#race-time-submit-button");
