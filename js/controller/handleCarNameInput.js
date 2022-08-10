@@ -25,8 +25,8 @@ export const handleCarNameSubmit = (event) => {
     addPlayers(item);
   });
 
-  carNameInput.disabled = true;
-  carNameSubmitButton.disabled = true;
+  toggleDisabled(carNameInput);
+  toggleDisabled(carNameSubmitButton);
 
   createRaceTimeInput();
 };
@@ -37,6 +37,10 @@ const isValidCarNameLength = (cars) => {
 
 const isEmptyCarName = (cars) => {
   return cars.every((car) => car.length !== 0);
+};
+
+const toggleDisabled = (element) => {
+  element.disabled = !element.disabled;
 };
 
 const createRaceTimeInput = () => {
