@@ -1,5 +1,5 @@
 import { handleCarNameSubmit } from "./controller/handleCarNameInput.js";
-import { $ } from "./DOM.js";
+import { $ } from "./constants/DOM.js";
 
 const initEventListener = () => {
   const form = $("#car-name-submit");

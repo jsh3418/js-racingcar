@@ -1,20 +1,20 @@
-const carPlayerTemplate = (car) => {
-  return car
-    .map((item) => {
-      return `<div class="mr-2 car">
-      <div class="car-player">${item.name}</div>
-    </div>`;
-    })
-    .join("");
-};
-
-export const gameProcessTemplate = (car) => {
+export const gameProcessTemplate = (players) => {
   return `
   <section class="d-flex justify-center mt-5">
     <div class="mt-4 d-flex">
-      ${carPlayerTemplate(car)}
+      ${carPlayerTemplate(players)}
     </div>
   </section>`;
+};
+
+const carPlayerTemplate = (players) => {
+  return players
+    .map((player) => {
+      return `<div class="mr-2 car">
+      <div data-id="${player.name}" class="car-player">${player.name}</div>
+    </div>`;
+    })
+    .join("");
 };
 
 export const forwardIconTemplate = `<div class="forward-icon mt-2">⬇️️</div>`;

@@ -1,7 +1,7 @@
 import { store } from "../model.js";
 import { winnerTemplate } from "../view/winnerTemplate.js";
 import { resetButtonEventListener } from "../eventListener/resetButtonEventListener.js";
-import { $ } from "../DOM.js";
+import { $ } from "../constants/DOM.js";
 
 export const renderWinner = () => {
   const divApp = $("#app");

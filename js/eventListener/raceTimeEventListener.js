@@ -1,5 +1,5 @@
 import { handleRaceTimeInput } from "../controller/handleRaceTimeInput.js";
-import { $ } from "../DOM.js";
+import { $ } from "../constants/DOM.js";
 
 export const raceTimeEventListener = () => {
   const raceTimeSubmitButton = $("#race-time-submit-button");

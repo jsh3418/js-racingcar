@@ -1,4 +1,4 @@
-import { $ } from "../DOM.js";
+import { $ } from "../constants/DOM.js";
 import { store } from "../model.js";
 import { startGame } from "./startGame.js";
 

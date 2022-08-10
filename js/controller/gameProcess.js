@@ -1,19 +1,28 @@
-import { $$ } from "../DOM.js";
+import { GAME } from "../constants/constants.js";
+import { $, $$ } from "../constants/DOM.js";
 import { store } from "../model.js";
 import {
   forwardIconTemplate,
   spinnerIconTemplate,
 } from "../view/gameProcessTemplate.js";
 
-export const randomGoStop = () => {
-  for (let i in store.players) {
-    const randomInteger = Math.floor(Math.random() * 10);
-    if (randomInteger >= 4) {
-      const cars = $$(".car-player");
-      cars[i].insertAdjacentHTML("afterend", forwardIconTemplate);
-      store.players[i].point++;
+export const startGame = () => {
+  const cars = store.players;
+  cars.forEach((car) => {
+    if (isEffectiveScore(getRandomNumber(GAME.MIN_SCORE, GAME.MAX_SCORE))) {
+      car.point++;
+      const $carWrap = $(`[data-id="${car.name}"]`);
+      $carWrap.insertAdjacentHTML("afterend", forwardIconTemplate);
     }
-  }
+  });
+};
+
+const getRandomNumber = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+const isEffectiveScore = (num) => {
+  return num >= GAME.EFFECTIVE_SCORE;
 };
 
 export const paintSpinnerIcon = () => {

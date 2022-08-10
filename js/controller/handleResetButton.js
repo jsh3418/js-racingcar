@@ -1,7 +1,7 @@
 import { resetTemplate } from "../view/resetTemplate.js";
 import { initApp } from "../index.js";
 import { resetStore } from "../model.js";
-import { $ } from "../DOM.js";
+import { $ } from "../constants/DOM.js";
 
 export const handleResetButton = () => {
   const app = $("#app");
