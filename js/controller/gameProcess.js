@@ -6,7 +6,7 @@ import {
   spinnerIconTemplate,
 } from "../view/gameProcessTemplate.js";
 
-export const startGame = () => {
+export const gameProcess = () => {
   const cars = store.players;
   cars.forEach((car) => {
     if (isEffectiveScore(getRandomNumber(GAME.MIN_SCORE, GAME.MAX_SCORE))) {
@@ -26,15 +26,16 @@ const isEffectiveScore = (num) => {
 };
 
 export const paintSpinnerIcon = () => {
-  const cars = $$(".car-player");
-  for (let element of cars) {
-    element.insertAdjacentHTML("afterend", spinnerIconTemplate);
-  }
+  const players = $$(".car-player");
+  players.forEach((player) => {
+    player.insertAdjacentHTML("afterend", spinnerIconTemplate);
+  });
 };
 
 export const deleteSpinnerIcon = () => {
   const spinners = $$("#spinnerIcon");
-  for (let element of spinners) {
-    element.remove();
-  }
+
+  spinners.forEach((spinner) => {
+    spinner.remove();
+  });
 };

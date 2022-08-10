@@ -2,7 +2,7 @@ import { store } from "../model.js";
 import { carNameRender } from "./carNameRender.js";
 import { renderWinner } from "./renderWinner.js";
 import {
-  startGame,
+  gameProcess,
   paintSpinnerIcon,
   deleteSpinnerIcon,
 } from "./gameProcess.js";
@@ -13,7 +13,7 @@ export const startGame = () => {
   paintSpinnerIcon();
 
   const raceInterval = setInterval(() => {
-    startGame();
+    gameProcess();
     store.raceTime--;
     if (store.raceTime === 0) {
       clearInterval(raceInterval);
