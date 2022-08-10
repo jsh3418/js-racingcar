@@ -3,7 +3,7 @@ export const store = {
   raceTime: null,
 };
 
-export const savePlayers = (name) => {
+export const addPlayers = (name) => {
   const playersTemplate = { name: name, point: 0 };
   store.players.push(playersTemplate);
 };
