@@ -2,6 +2,7 @@ import { savePlayers } from "../model.js";
 import { raceTimeTemplate } from "../view/raceTimeTemplate.js";
 import { raceTimeEventListener } from "../eventListener/raceTimeEventListener.js";
 import { $ } from "../constants/DOM.js";
+import { CAR_NAME, ERROR_MESSAGE } from "../constants/constants.js";
 
 export const handleCarNameSubmit = (event) => {
   event.preventDefault();
@@ -11,12 +12,13 @@ export const handleCarNameSubmit = (event) => {
 
   const carNames = carNameInput.value.split(",").map((value) => value.trim());
 
-  for (let item of carNames) {
-    if (item.length > 5) {
-      alert("5자 이하의 자동차 이름을 입력해주세요.");
-      $("#car-name-input").value = "";
-      return;
-    }
+  if (!isValidCarNameLength(carNames)) {
+    alert(ERROR_MESSAGE.CAR_NAME_TOO_LONG);
+    return;
+  }
+  if (!isEmptyCarName(carNames)) {
+    alert(ERROR_MESSAGE.CAR_NAME_EMPTY);
+    return;
   }
 
   carNames.forEach((item) => {
@@ -27,6 +29,14 @@ export const handleCarNameSubmit = (event) => {
   carNameSubmitButton.disabled = true;
 
   createRaceTimeInput();
+};
+
+const isValidCarNameLength = (cars) => {
+  return cars.every((car) => car.length < CAR_NAME.MAX_LENGTH);
+};
+
+const isEmptyCarName = (cars) => {
+  return cars.every((car) => car.length !== 0);
 };
 
 const createRaceTimeInput = () => {
