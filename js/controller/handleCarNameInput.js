@@ -28,7 +28,7 @@ export const handleCarNameSubmit = (event) => {
   toggleDisabled(carNameInput);
   toggleDisabled(carNameSubmitButton);
 
-  createRaceTimeInput();
+  createRaceTimeSection();
 };
 
 const isValidCarNameLength = (cars) => {
@@ -43,7 +43,7 @@ const toggleDisabled = (element) => {
   element.disabled = !element.disabled;
 };
 
-const createRaceTimeInput = () => {
+const createRaceTimeSection = () => {
   const userInputComponent = $("#user-input-component");
 
   const section = document.createElement("section");
