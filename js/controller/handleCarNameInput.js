@@ -3,6 +3,7 @@ import { raceTimeTemplate } from "../view/raceTimeTemplate.js";
 import { raceTimeEventListener } from "../eventListener/raceTimeEventListener.js";
 import { $ } from "../constants/DOM.js";
 import { CAR_NAME, ERROR_MESSAGE } from "../constants/constants.js";
+import { clearInputValue, toggleDisabled } from "./utils.js";
 
 export const handleCarNameSubmit = (event) => {
   event.preventDefault();
@@ -14,10 +15,12 @@ export const handleCarNameSubmit = (event) => {
 
   if (!isValidCarNameLength(carNames)) {
     alert(ERROR_MESSAGE.CAR_NAME_TOO_LONG);
+    clearInputValue(carNameInput);
     return;
   }
   if (!isEmptyCarName(carNames)) {
     alert(ERROR_MESSAGE.CAR_NAME_EMPTY);
+    clearInputValue(carNameInput);
     return;
   }
 
@@ -37,10 +40,6 @@ const isValidCarNameLength = (cars) => {
 
 const isEmptyCarName = (cars) => {
   return cars.every((car) => car.length !== 0);
-};
-
-const toggleDisabled = (element) => {
-  element.disabled = !element.disabled;
 };
 
 const createRaceTimeSection = () => {
