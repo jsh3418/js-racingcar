@@ -1,4 +1,4 @@
-import { handleCarNameSubmit } from "./controller/handleCarNameInput.js";
+import { handleCarNameSubmit } from "./controller/handleCarNameSubmit.js";
 import { $ } from "./constants/DOM.js";
 
 const initEventListener = () => {
