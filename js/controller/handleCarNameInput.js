@@ -24,9 +24,7 @@ export const handleCarNameSubmit = (event) => {
     return;
   }
 
-  carNames.forEach((item) => {
-    addPlayers(item);
-  });
+  addPlayers(carNames);
 
   toggleDisabled(carNameInput);
   toggleDisabled(carNameSubmitButton);

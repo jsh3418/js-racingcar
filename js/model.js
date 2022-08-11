@@ -3,9 +3,11 @@ export const store = {
   raceTime: null,
 };
 
-export const addPlayers = (name) => {
-  const playersTemplate = { name: name, point: 0 };
-  store.players.push(playersTemplate);
+export const addPlayers = (carNames) => {
+  carNames.forEach((carName) => {
+    const playerTemplate = { name: carName, point: 0 };
+    store.players.push(playerTemplate);
+  });
 };
 
 export const resetStore = () => {
