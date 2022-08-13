@@ -5,8 +5,8 @@ export const store = {
 
 export const addCars = (carNames) => {
   carNames.forEach((carName) => {
-    const playerTemplate = { name: carName, point: 0 };
-    store.cars.push(playerTemplate);
+    const carTemplate = { name: carName, point: 0 };
+    store.cars.push(carTemplate);
   });
 };
 
