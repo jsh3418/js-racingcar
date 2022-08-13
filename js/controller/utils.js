@@ -7,3 +7,7 @@ export const toggleDisabled = (element) => {
 export const clearInputValue = (element) => {
   $(element).value = "";
 };
+
+export const getRandomNumber = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
