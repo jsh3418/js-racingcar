@@ -30,6 +30,7 @@ export const handleCarNameSubmit = (event) => {
   disabled(carNameSubmitButton);
 
   createRaceTimeSection();
+  raceTimeEventListener();
 };
 
 const isValidCarNameLength = (cars) => {
@@ -46,6 +47,4 @@ const createRaceTimeSection = () => {
   const section = document.createElement("section");
   section.innerHTML = raceTimeTemplate;
   userInputComponent.appendChild(section);
-
-  raceTimeEventListener();
 };

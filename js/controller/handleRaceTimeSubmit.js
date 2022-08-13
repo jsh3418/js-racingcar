@@ -1,4 +1,4 @@
-import { ERROR_MESSAGE, GAME } from "../constants/constants.js";
+import { ERROR_MESSAGE } from "../constants/constants.js";
 import { $ } from "../constants/DOM.js";
 import { store } from "../model.js";
 import { startGame } from "./startGame.js";
