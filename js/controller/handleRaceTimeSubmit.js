@@ -2,7 +2,7 @@ import { ERROR_MESSAGE, GAME } from "../constants/constants.js";
 import { $ } from "../constants/DOM.js";
 import { store } from "../model.js";
 import { startGame } from "./startGame.js";
-import { clearInput, toggleDisabled } from "./utils.js";
+import { clearInput, disabled } from "./utils.js";
 
 export const handleRaceTimeSubmit = (event) => {
   event.preventDefault();
@@ -19,8 +19,8 @@ export const handleRaceTimeSubmit = (event) => {
   }
   store.raceTime = raceTime;
 
-  toggleDisabled(raceTimeInput);
-  toggleDisabled(raceTimeSubmitButton);
+  disabled(raceTimeInput);
+  disabled(raceTimeSubmitButton);
 
   startGame();
 };

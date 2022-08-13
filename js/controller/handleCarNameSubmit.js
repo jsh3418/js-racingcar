@@ -3,7 +3,7 @@ import { raceTimeTemplate } from "../view/raceTimeTemplate.js";
 import { raceTimeEventListener } from "../eventListener/raceTimeEventListener.js";
 import { $ } from "../constants/DOM.js";
 import { CAR_NAME, ERROR_MESSAGE } from "../constants/constants.js";
-import { clearInput, toggleDisabled } from "./utils.js";
+import { clearInput, disabled } from "./utils.js";
 
 export const handleCarNameSubmit = (event) => {
   event.preventDefault();
@@ -26,8 +26,8 @@ export const handleCarNameSubmit = (event) => {
 
   addCars(carNames);
 
-  toggleDisabled(carNameInput);
-  toggleDisabled(carNameSubmitButton);
+  disabled(carNameInput);
+  disabled(carNameSubmitButton);
 
   createRaceTimeSection();
 };

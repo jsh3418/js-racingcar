@@ -1,7 +1,7 @@
 import { $ } from "../constants/DOM.js";
 
-export const toggleDisabled = (element) => {
-  element.disabled = !element.disabled;
+export const disabled = (element) => {
+  element.disabled = true;
 };
 
 export const clearInput = (element) => {
