@@ -2,7 +2,7 @@ import { ERROR_MESSAGE, GAME } from "../constants/constants.js";
 import { $ } from "../constants/DOM.js";
 import { store } from "../model.js";
 import { startGame } from "./startGame.js";
-import { clearInputValue, toggleDisabled } from "./utils.js";
+import { clearInput, toggleDisabled } from "./utils.js";
 
 export const handleRaceTimeSubmit = (event) => {
   event.preventDefault();
@@ -14,7 +14,7 @@ export const handleRaceTimeSubmit = (event) => {
 
   if (!isValidRaceTime) {
     alert(ERROR_MESSAGE.RACE_TIME_CANNOT_BE_ZERO);
-    clearInputValue("#race-time-input");
+    clearInput("#race-time-input");
     return;
   }
   store.raceTime = raceTime;

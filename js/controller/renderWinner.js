@@ -3,7 +3,7 @@ import { winnerTemplate } from "../view/winnerTemplate.js";
 import { resetButtonEventListener } from "../eventListener/resetButtonEventListener.js";
 import { $ } from "../constants/DOM.js";
 
-export const renderWinner = () => {
+export const renderWinners = () => {
   const divApp = $("#app");
   const div = document.createElement("div");
   div.innerHTML = winnerTemplate(pickWinners());
@@ -13,13 +13,11 @@ export const renderWinner = () => {
 };
 
 const pickWinners = () => {
-  const winningPoints = Math.max(
-    ...store.players.map((player) => player.point)
-  );
+  const winningPoints = Math.max(...store.cars.map((car) => car.point));
 
-  const winners = store.players
-    .filter((player) => player.point === winningPoints)
-    .map((player) => player.name);
+  const winners = store.cars
+    .filter((car) => car.point === winningPoints)
+    .map((car) => car.name);
 
   return winners;
 };

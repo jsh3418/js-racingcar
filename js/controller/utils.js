@@ -4,7 +4,7 @@ export const toggleDisabled = (element) => {
   element.disabled = !element.disabled;
 };
 
-export const clearInputValue = (element) => {
+export const clearInput = (element) => {
   $(element).value = "";
 };
 

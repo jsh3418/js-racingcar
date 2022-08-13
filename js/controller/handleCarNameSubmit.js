@@ -1,9 +1,9 @@
-import { addPlayers } from "../model.js";
+import { addCars } from "../model.js";
 import { raceTimeTemplate } from "../view/raceTimeTemplate.js";
 import { raceTimeEventListener } from "../eventListener/raceTimeEventListener.js";
 import { $ } from "../constants/DOM.js";
 import { CAR_NAME, ERROR_MESSAGE } from "../constants/constants.js";
-import { clearInputValue, toggleDisabled } from "./utils.js";
+import { clearInput, toggleDisabled } from "./utils.js";
 
 export const handleCarNameSubmit = (event) => {
   event.preventDefault();
@@ -15,16 +15,16 @@ export const handleCarNameSubmit = (event) => {
 
   if (!isValidCarNameLength(carNames)) {
     alert(ERROR_MESSAGE.CAR_NAME_TOO_LONG);
-    clearInputValue(carNameInput);
+    clearInput(carNameInput);
     return;
   }
   if (!isEmptyCarName(carNames)) {
     alert(ERROR_MESSAGE.CAR_NAME_EMPTY);
-    clearInputValue(carNameInput);
+    clearInput(carNameInput);
     return;
   }
 
-  addPlayers(carNames);
+  addCars(carNames);
 
   toggleDisabled(carNameInput);
   toggleDisabled(carNameSubmitButton);

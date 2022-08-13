@@ -1,17 +1,17 @@
-export const gameProcessTemplate = (players) => {
+export const gameProcessTemplate = (cars) => {
   return `
   <section class="d-flex justify-center mt-5">
     <div class="mt-4 d-flex">
-      ${carPlayerTemplate(players)}
+      ${carNameTemplate(cars)}
     </div>
   </section>`;
 };
 
-const carPlayerTemplate = (players) => {
-  return players
-    .map((player) => {
+const carNameTemplate = (cars) => {
+  return cars
+    .map((car) => {
       return `<div class="mr-2 car">
-      <div data-id="${player.name}" class="car-player">${player.name}</div>
+      <div data-id="${car.name}" class="car-player">${car.name}</div>
     </div>`;
     })
     .join("");
