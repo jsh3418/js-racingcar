@@ -6,22 +6,20 @@ import { $ } from "../constants/DOM.js";
 export const renderWinner = () => {
   const divApp = $("#app");
   const div = document.createElement("div");
-  div.innerHTML = winnerTemplate(pickWinner());
+  div.innerHTML = winnerTemplate(pickWinners());
   divApp.appendChild(div);
 
   resetButtonEventListener();
 };
 
-const pickWinner = () => {
-  let winner;
-  let temp = 0;
-  for (let i in store.players) {
-    if (temp < store.players[i].point) {
-      winner = store.players[i].name;
-      temp = store.players[i].point;
-    } else if (temp === store.players[i].point) {
-      winner += `, ${store.players[i].name}`;
-    }
-  }
-  return winner;
+const pickWinners = () => {
+  const winningPoints = Math.max(
+    ...store.players.map((player) => player.point)
+  );
+
+  const winners = store.players
+    .filter((player) => player.point === winningPoints)
+    .map((player) => player.name);
+
+  return winners;
 };
