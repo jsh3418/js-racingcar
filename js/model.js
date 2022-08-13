@@ -3,7 +3,7 @@ export const store = {
   raceTime: null,
 };
 
-export const addCars = (carNames) => {
+export const addCarData = (carNames) => {
   carNames.forEach((carName) => {
     const carTemplate = { name: carName, point: 0 };
     store.cars.push(carTemplate);
